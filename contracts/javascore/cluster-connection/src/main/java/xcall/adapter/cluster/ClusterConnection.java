@@ -266,9 +266,11 @@ public class ClusterConnection {
         for (byte[] signature : signatures) {
             byte[] validator = getValidator(messageHash, signature);
             String hexValidator = bytesToHex(validator);
-            Context.require(isValidator(hexValidator), "Invalid signature provided");
-            if (!uniqueValidators.contains(hexValidator)) {
+            if (isValidator(hexValidator) && !uniqueValidators.contains(hexValidator)) {
                 uniqueValidators.add(hexValidator);
+            }
+            if (uniqueValidators.size() >= validatorsThreshold.get().intValue()) {
+                break;
             }
         }
         Context.require(uniqueValidators.size() >= validatorsThreshold.get().intValue(), "Not enough valid signatures");
