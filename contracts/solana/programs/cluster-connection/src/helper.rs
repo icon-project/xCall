@@ -73,8 +73,8 @@ pub fn get_nid(xcall_config: &AccountInfo, config: &Config) -> String {
 
     invoke(&ix, &account_infos).unwrap();
 
-    let network_address = String::from_utf8(get_return_data().unwrap().1).unwrap();
-    network_address.parse::<NetworkAddress>().unwrap().nid()   
+    let network_address = NetworkAddress::try_from_slice(&get_return_data().unwrap().1).unwrap();
+    return network_address.nid().to_string();  
 }
 
 pub fn call_xcall_handle_message_with_signatures<'info>(
