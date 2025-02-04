@@ -1,0 +1,74 @@
+[project]
+name = 'stacks'
+description = ''
+authors = []
+telemetry = true
+cache_dir = './.cache'
+requirements = []
+[contracts.centralized-connection]
+path = 'contracts/connections/centralized-connection.clar'
+clarity_version = 2
+epoch = 2.5
+
+[contracts.debug]
+path = 'contracts/debug.clar'
+clarity_version = 3
+epoch = 3.0
+
+[contracts.mock-dapp]
+path = 'tests/mocks/mock-dapp.clar'
+clarity_version = 2
+epoch = 2.5
+
+[contracts.rlp-decode]
+path = 'lib/rlp/rlp-decode.clar'
+clarity_version = 2
+epoch = 2.5
+
+[contracts.rlp-encode]
+path = 'lib/rlp/rlp-encode.clar'
+clarity_version = 2
+epoch = 2.5
+
+[contracts.util]
+path = 'contracts/util.clar'
+clarity_version = 2
+epoch = 2.5
+
+[contracts.xcall-common-trait]
+path = 'contracts/xcall/xcall-common-trait.clar'
+clarity_version = 2
+epoch = 2.5
+
+[contracts.xcall-impl]
+path = 'contracts/xcall/xcall-impl.clar'
+clarity_version = 2
+epoch = 2.5
+
+[contracts.xcall-impl-trait]
+path = 'contracts/xcall/xcall-impl-trait.clar'
+clarity_version = 2
+epoch = 2.5
+
+[contracts.xcall-proxy]
+path = 'contracts/xcall/xcall-proxy.clar'
+clarity_version = 2
+epoch = 2.5
+
+[contracts.xcall-proxy-trait]
+path = 'contracts/xcall/xcall-proxy-trait.clar'
+clarity_version = 2
+epoch = 2.5
+
+[contracts.xcall-receiver-trait]
+path = 'contracts/xcall/xcall-receiver-trait.clar'
+clarity_version = 2
+epoch = 2.5
+[repl.analysis]
+passes = ['check_checker']
+
+[repl.analysis.check_checker]
+strict = false
+trusted_sender = false
+trusted_caller = false
+callee_filter = false

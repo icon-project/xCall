@@ -1,0 +1,88 @@
+---
+id: 0
+name: Testnet deployment
+network: testnet
+stacks-node: "https://api.testnet.hiro.so"
+bitcoin-node: "http://blockstack:blockstacksystem@bitcoind.testnet.stacks.co:18332"
+plan:
+  batches:
+    - id: 0
+      transactions:
+        - contract-publish:
+            contract-name: xcall-common-trait
+            expected-sender: ST15C893XJFJ6FSKM020P9JQDB5T7X6MQTXMBPAVH
+            cost: 401659
+            path: contracts/xcall/xcall-common-trait.clar
+            anchor-block-only: true
+            clarity-version: 2
+        - contract-publish:
+            contract-name: xcall-receiver-trait
+            expected-sender: ST15C893XJFJ6FSKM020P9JQDB5T7X6MQTXMBPAVH
+            cost: 401659
+            path: contracts/xcall/xcall-receiver-trait.clar
+            anchor-block-only: true
+            clarity-version: 2
+        - contract-publish:
+            contract-name: xcall-impl-trait
+            expected-sender: ST15C893XJFJ6FSKM020P9JQDB5T7X6MQTXMBPAVH
+            cost: 401901
+            path: contracts/xcall/xcall-impl-trait.clar
+            anchor-block-only: true
+            clarity-version: 2
+        - contract-publish:
+            contract-name: xcall-proxy-trait
+            expected-sender: ST15C893XJFJ6FSKM020P9JQDB5T7X6MQTXMBPAVH
+            cost: 402046
+            path: contracts/xcall/xcall-proxy-trait.clar
+            anchor-block-only: true
+            clarity-version: 2
+        - contract-publish:
+            contract-name: xcall-proxy
+            expected-sender: ST15C893XJFJ6FSKM020P9JQDB5T7X6MQTXMBPAVH
+            cost: 403306
+            path: contracts/xcall/xcall-proxy.clar
+            anchor-block-only: true
+            clarity-version: 2
+        - contract-publish:
+            contract-name: centralized-connection
+            expected-sender: ST15C893XJFJ6FSKM020P9JQDB5T7X6MQTXMBPAVH
+            cost: 402434
+            path: contracts/connections/centralized-connection.clar
+            anchor-block-only: true
+            clarity-version: 2
+        - contract-publish:
+            contract-name: rlp-decode
+            expected-sender: ST15C893XJFJ6FSKM020P9JQDB5T7X6MQTXMBPAVH
+            cost: 402773
+            path: lib/rlp/rlp-decode.clar
+            anchor-block-only: true
+            clarity-version: 2
+        - contract-publish:
+            contract-name: mock-dapp
+            expected-sender: ST15C893XJFJ6FSKM020P9JQDB5T7X6MQTXMBPAVH
+            cost: 402385
+            path: tests/mocks/mock-dapp.clar
+            anchor-block-only: true
+            clarity-version: 2
+        - contract-publish:
+            contract-name: rlp-encode
+            expected-sender: ST15C893XJFJ6FSKM020P9JQDB5T7X6MQTXMBPAVH
+            cost: 402192
+            path: lib/rlp/rlp-encode.clar
+            anchor-block-only: true
+            clarity-version: 2
+        # - contract-publish:
+        #     contract-name: util
+        #     expected-sender: ST15C893XJFJ6FSKM020P9JQDB5T7X6MQTXMBPAVH
+        #     cost: 402288
+        #     path: contracts/util.clar
+        #     anchor-block-only: true
+        #     clarity-version: 2
+        - contract-publish:
+            contract-name: xcall-impl
+            expected-sender: ST15C893XJFJ6FSKM020P9JQDB5T7X6MQTXMBPAVH
+            cost: 406648
+            path: contracts/xcall/xcall-impl.clar
+            anchor-block-only: true
+            clarity-version: 2
+      epoch: "2.5"
